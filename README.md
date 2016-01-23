@@ -10,6 +10,7 @@ Possible improvements:
  * Disable journal
  * create writable partitions, so state is preserved, add a boot time check to erase if a problem is found with the writable partitions
  * ```mount_unionfs``` could be made way more robust
+ * ```/{etc,var}_orig``` should be cleaned out as much as possible
  * Documentation
  * ...
 
