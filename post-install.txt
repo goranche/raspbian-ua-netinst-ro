@@ -1,6 +1,15 @@
 ################################################
 ### Make the system read-only
 
+# We want to be able to change hostname, hosts and mtab
+# Link them to /tmp, which is a tmpfs anyway
+rm /rootfs/etc/hostname
+ln -s /tmp/hostname /rootfs/etc/hostname
+rm /rootfs/etc/hosts
+ln -s /tmp/hosts /rootfs/etc/hosts
+rm /rootfs/etc/mtab
+ln -s /proc/self/mounts /rootfs/etc/mtab
+
 # Package should've been installed by installer-config.txt, but still...
 chroot /rootfs apt-get -y install unionfs-fuse
 
