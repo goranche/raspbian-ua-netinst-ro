@@ -8,10 +8,7 @@ cp /bootfs/mount_unionfs /rootfs/usr/local/bin/mount_unionfs
 chmod +x /rootfs/usr/local/bin/mount_unionfs
 
 sed -i 's/^\/dev\/mmcblk\S*\s\+\/[a-z]*\s\+\S*\s\+/&ro,/' /rootfs/etc/fstab
-echo "mount_unionfs /etc fuse defaults 0 0" >> /rootfs/etc/fstab
 echo "mount_unionfs /var fuse defaults 0 0" >> /rootfs/etc/fstab
 
-cp -al /rootfs/etc /rootfs/etc_orig
 mv /rootfs/var /rootfs/var_orig
-mkdir /rootfs/etc_rw
 mkdir /rootfs/var /rootfs/var_rw
