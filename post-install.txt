@@ -21,3 +21,4 @@ echo "mount_unionfs /var fuse defaults 0 0" >> /rootfs/etc/fstab
 
 mv /rootfs/var /rootfs/var_orig
 mkdir /rootfs/var /rootfs/var_rw
+mount --bind /rootfs/var_orig /rootfs/var
